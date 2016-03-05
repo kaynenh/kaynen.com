@@ -1,0 +1,41 @@
+{% set header_class = (page.slug == 'home' or page.parent.slug == 'blog') ? 'large' : 'small' %}
+<header id="{{ page.slug }}" class="{{ header_class }}">
+  {% block navigation %}
+  {% include 'partials/navigation.html.twig' %}
+  {% endblock %}
+
+  {% if page.slug == 'home' %}
+    <div class="row banner">
+      <div class="banner-text">
+        <h1 class="responsive-headline">{{ site.header.title }}</h1>
+        <h3>{{ site.header.description }}</h3>
+        <hr />
+        {% if site.social %}
+        <ul class="social">
+          {% for item in site.social %}
+          <li><a href="{{ item.url }}"><i class="fa fa-{{ item.icon }}"></i></a></li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+    </div>
+    <p class="scrolldown">
+      <a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a>
+    </p>
+  {% endif %}
+
+  {% if page.slug != 'home' %}
+    <div class="row banner">
+      <div class="banner-text">
+        <h1 class="responsive-headline">{{ page.title }}</h1>
+        <hr />
+      </div>
+    </div>
+
+    {% if page.slug != 'blog' %}
+    <p class="scrolldown">
+      <a class="smoothscroll" href="#main-content"><i class="icon-down-circle"></i></a>
+    </p>
+    {% endif %}
+  {% endif %}
+</header>

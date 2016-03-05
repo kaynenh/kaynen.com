@@ -1,0 +1,35 @@
+
+<nav id="nav-wrap">
+    <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+    <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+
+    {% set show_onpage_menu = header.onpage_menu == true or header.onpage_menu is null %}
+    {% macro pageLinkName(text) %}{{ text|lower|replace({' ':'_'}) }}{% endmacro %}
+
+    <ul id="nav" class="nav">
+        <li class="">
+            <a href="/">
+                Home
+            </a>
+        </li>
+        {% for page in pages.children %}
+            {% if (page.visible and page.url != '/') %}
+                {% set current_page = (page.active or page.activeChild or page.parent().active) ? 'current' : '' %}
+                <li class="{{ current_page }}">
+                    <a href="{{ page.url }}">
+                        {{ page.menu }}
+                    </a>
+                </li>
+            {% endif %}
+            {% for module in page.collection() %}
+                {% if not module.header.hidemenu %}
+                    {% set current_page = (module.active or module.activeChild) ? 'current' : '' %}
+                    {% set scroll_or_no = (page.active) ? 'smoothscroll' : '' %}
+                    <li class="{{ current_module }}">
+                        <a class="{{ scroll_or_no }}" href="{{ page.url }}#{{ _self.pageLinkName(module.menu) }}">{{ module.menu }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </ul>
+</nav>
