@@ -1,6 +1,6 @@
 # Composer
-.composer
-vendor/
+#.composer
+#vendor/
 
 # Sass
 .sass-cache
@@ -10,8 +10,8 @@ backup/*
 !backup/.*
 cache/*
 !cache/.*
-assets/*
-!assets/.*
+#assets/*
+#!assets/.*
 logs/*
 !logs/.*
 images/*
