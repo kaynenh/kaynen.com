@@ -1,0 +1,9 @@
+email: kaynenh@gmail.com
+access:
+  admin:
+    login: true
+    super: true
+fullname: 'Kaynen Heikkinen'
+title: Developer
+state: enabled
+hashed_password: $2y$10$Q9Nq3K1n7Kr.oa4u25rxc.nt.0I4Lk6xZk2omi5w9lQJg07wiqOp2

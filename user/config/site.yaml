@@ -1,0 +1,58 @@
+title: Kaynen.com
+author:
+  name: 'Kaynen Heikkinen'
+  email: i_am@kaynen.com
+taxonomies:
+  - category
+  - tag
+metadata:
+  description: 'The online home of Kaynen Heikkinen'
+summary:
+  enabled: true
+  format: short
+  size: 300
+  delimiter: '==='
+redirects:
+  /redirect-test: /
+  '/old/(.*)': /new/$1
+routes:
+  /something/else: /blog/sample-3
+  '/new/(.*)': /blog/$1
+blog:
+  route: /blog
+header:
+  title: 'Kaynen Heikkinen<br /><span>Full-Stack Developer and Designer</span>'
+  description: 'Welcome to my collection of pulses of light; a place to show my code and creations, share my inspirations and aspirations and give back to the incredible world of people to whom I owe my working existence. <a class="smoothscroll" href="#about">Who am I?</a>'
+copyright:
+  -
+    line: 'Copyright 2016 Kaynen'
+  -
+    line: 'Development by Kaynen Heikkinen, based on a theme by <a title="Styleshout" href="http://www.styleshout.com/">Styleshout</a> for Grav, the flat-file CMS'
+frontfooter:
+  -
+    line: 'Banner Photo Credit: <a href="https://www.flickr.com/photos/58210871@N06/8573968949/">Nicholas Erwin</a> via <a href="http://compfight.com">Compfight</a> <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/">cc</a>'
+social:
+  -
+    url: 'https://www.facebook.com/kaynen.heikkinen'
+    icon: facebook
+  -
+    url: 'https://twitter.com/kaynenh'
+    icon: twitter
+  -
+    url: 'https://plus.google.com/+KaynenHeikkinen'
+    icon: google-plus
+  -
+    url: 'https://www.linkedin.com/in/kaynen'
+    icon: linkedin
+  -
+    url: 'https://github.com/kaynenh'
+    icon: github
+#  -
+#    url: '#'
+#    icon: instagram
+#  -
+#    url: '#'
+#    icon: dribbble
+#  -
+#    url: '#'
+#    icon: skype
